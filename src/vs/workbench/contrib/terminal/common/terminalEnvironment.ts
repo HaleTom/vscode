@@ -93,7 +93,7 @@ export function shouldSetLangEnvVariable(env: platform.IProcessEnvironment, dete
 		return true;
 	}
 	if (detectLocale === 'auto') {
-		return !env['LANG'] || env['LANG'].search(/\.UTF\-8$/) === -1;
+		return !env['LANG'] || env['LANG'].search(/\.UTF\-8$/i) === -1;
 	}
 	return false; // 'off'
 }
