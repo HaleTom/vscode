@@ -46,6 +46,7 @@ suite('Workbench - TerminalEnvironment', () => {
 			assert.equal(shouldSetLangEnvVariable({}, 'auto'), true);
 			assert.equal(shouldSetLangEnvVariable({ LANG: 'en-US' }, 'auto'), true);
 			assert.equal(shouldSetLangEnvVariable({ LANG: 'en-US.UTF-8' }, 'auto'), false);
+			assert.equal(shouldSetLangEnvVariable({ LANG: 'en-US.uTf-8' }, 'auto'), false);
 		});
 		test('off', () => {
 			assert.equal(shouldSetLangEnvVariable({}, 'off'), false);
